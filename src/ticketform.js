@@ -8,6 +8,7 @@ const ContactForm = () => {
       "edbsn961867d6876142915d1a78b75cab80301cb4934c2e66419a39e7825e8d0f07fc",
     xJdfEaS: "",
     actionType: "Q2FzZXM=",
+    returnURL: "https&#x3a;&#x2f;&#x2f;main-app-7qi.pages.dev&#x2f;",
     firstname: "",
     lastname: "",
     email: "",
