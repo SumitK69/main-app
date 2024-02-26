@@ -1,0 +1,36 @@
+@import '~bootstrap/scss/bootstrap';
+
+
+
+*{
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+}
+
+form{
+    // background-color: #f2f2f2;
+    // padding: 20px;
+
+    // box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    // border-radius: 10px;
+    // width: 50%;
+    // height: 50%;
+}
+.container {
+    width: 30%;
+    margin-top: 20px;
+    border-radius: 15px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
+
+form *{
+    width: 85%;
+    height: 30%;
+    font-weight: bold;
+}
+.row::after{
+    content: "";
+    display: table;
+    clear: both;
+    font-size: larger;}

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
-const ContactForm = () => {
+const TicketForm = () => {
   const [formData, setFormData] = useState({
     xnQsjsdp: "edbsn1d8d2e6bed3c705918f0969177cffca2",
     xmIwtLD:
@@ -14,7 +16,9 @@ const ContactForm = () => {
     Email: "",
     Subject: "",
     Description: "",
+    attachments: [],
   });
+
   // ! Axios method
   const options = {
     method: "POST",
@@ -22,14 +26,6 @@ const ContactForm = () => {
     params: formData,
   };
   // ! Axios method
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,124 +38,85 @@ const ContactForm = () => {
       .catch(function (error) {
         console.error(error);
       });
-    // ! Axios method
-
-    // ! Fetch Method
-    // const options = {
-    //   method: "POST",
-    //   headers: {
-    //     cookie:
-    //       "2eed0b67fd=f369298bdcaa504163502a5596fe31d7; crmcsr=8c423b47-abaa-4edf-8a61-6797c7b74d50; _zcsr_tmp=8c423b47-abaa-4edf-8a61-6797c7b74d50",
-    //     "User-Agent": "insomnia/2023.5.8",
-    //   },
-    // };
-
-    // fetch(
-    //   `https://desk.zoho.in/support/WebToCase?xnQsjsdp=${
-    //     formData.xnQsjsdp
-    //   }&xmIwtLD=${formData.xmIwtLD}&xJdfEaS=${formData.xJdfEaS}&actionType=${
-    //     formData.actionType
-    //   }&First%20Name=${encodeURIComponent(
-    //     formData["First Name"]
-    //   )}&Contact%20Name=${encodeURIComponent(
-    //     formData["Contact Name"]
-    //   )}&Email=${encodeURIComponent(
-    //     formData.Email
-    //   )}&Subject=${encodeURIComponent(
-    //     formData.Subject
-    //   )}&Description=${encodeURIComponent(formData.Description)}`,
-    //   options
-    // )
-    //   .then((response) => response.json())
-    //   .then((response) => console.log(response))
-    //   .catch((err) => console.error(err));
-    // ! Fetch Method
-
-    console.log("Form submitted:", formData);
-    alert("ticket is submitted");
-    handleReset();
   };
+  // ! Axios method
 
-  const handleReset = () => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
     setFormData({
-      "First Name": "",
-      "Contact Name": "",
-      Email: "",
-      Subject: "",
-      Description: "",
+      ...formData,
+      [name]: value,
     });
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    >
-      <label>
-        First Name:
-        <input
-          type="text"
-          name="First Name"
-          value={formData["First Name"]}
-          onChange={handleChange}
-          placeholder="First Name"
-          required
-        />
-      </label>
+    <div className="container">
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3">
+          <Form.Label> User Name:</Form.Label>
+          <Form.Control
+            type="text"
+            name="Contact Name"
+            value={formData["Contact Name"]}
+            onChange={handleChange}
+            required
+            placeholder="User Name"
+          />
+        </Form.Group>
 
-      <label>
-        Last Name:
-        <input
-          type="text"
-          name="Contact Name"
-          value={formData["Contact Name"]}
-          onChange={handleChange}
-          required
-          placeholder="Last Name"
-        />
-      </label>
+        <Form.Group className="mb-3">
+          <Form.Label> First Name:</Form.Label>
+          <Form.Control
+            type="text"
+            name="First Name"
+            value={formData["First Name"]}
+            onChange={handleChange}
+            required
+            placeholder="First Name"
+          />
+        </Form.Group>
 
-      <label>
-        Email:
-        <input
-          type="email"
-          name="Email"
-          value={formData.Email}
-          onChange={handleChange}
-          placeholder="Email"
-          required
-        />
-      </label>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Email address:</Form.Label>
+          <Form.Control
+            type="email"
+            name="Email"
+            value={formData.Email}
+            onChange={handleChange}
+            required
+            placeholder="Enter Email"
+          />
+        </Form.Group>
 
-      <label>
-        Subject:
-        <input
-          type="text"
-          name="Subject"
-          value={formData.Subject}
-          onChange={handleChange}
-          placeholder="Subject"
-          required
-        />
-      </label>
-
-      <label>
-        Description:
-        <textarea
-          name="Description"
-          value={formData.Description}
-          onChange={handleChange}
-          placeholder="Description"
-          required
-        ></textarea>
-      </label>
-
-      <button type="submit">Submit</button>
-      <button type="button" onClick={handleReset}>
-        Reset
-      </button>
-    </form>
+        <Form.Group className="mb-3">
+          <Form.Label> Subject:</Form.Label>
+          <Form.Control
+            type="text"
+            name="Subject"
+            value={formData.Subject}
+            onChange={handleChange}
+            required
+            placeholder="Subject"
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label> Description:</Form.Label>
+          <Form.Control
+            type="text"
+            name="Description"
+            value={formData.Description}
+            onChange={handleChange}
+            required
+            placeholder="Description"
+          />
+        </Form.Group>
+        <Button variant="warning" type="submit">
+          Submit
+        </Button>
+        {/* //todo:add reset function */}
+        <Button variant="warning">Reset</Button>
+      </Form>
+    </div>
   );
 };
-
-export default ContactForm;
+export default TicketForm;
