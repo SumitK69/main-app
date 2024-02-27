@@ -3,7 +3,7 @@ import axios from "axios";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-const TicketForm = () => {
+const MyForm = () => {
   const [formData, setFormData] = useState({
     xnQsjsdp: "edbsn1d8d2e6bed3c705918f0969177cffca2",
     xmIwtLD:
@@ -106,17 +106,18 @@ const TicketForm = () => {
             name="Description"
             value={formData.Description}
             onChange={handleChange}
-            required
+            require
             placeholder="Description"
           />
         </Form.Group>
         <Button variant="warning" type="submit">
           Submit
         </Button>
-        {/* //todo:add reset function */}
+        {/* //todo: add reset function */}
         <Button variant="warning">Reset</Button>
       </Form>
     </div>
   );
 };
-export default TicketForm;
+
+export default MyForm;
