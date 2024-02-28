@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="*" element={<HomePage />} />
         <Route path="/form" element={<MyForm />} />
-        <Route path="career" element={<CareerPage />} />
+        <Route path="/career" element={<CareerPage />} />
       </Routes>
       {/* <MyForm /> */}
     </Router>

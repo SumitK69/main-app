@@ -1,6 +1,3 @@
-// Install React Bootstrap if you haven't already
-// npm install react-bootstrap bootstrap
-
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 
@@ -25,7 +22,7 @@ const CareerPage = () => {
         "Familiarity with design tools like Figma or Sketch",
       ],
     },
-    // Add more job openings as needed
+    // todo: Add more job openings as needed
   ];
 
   return (
