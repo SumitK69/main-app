@@ -5,6 +5,7 @@ import Home from "./Home";
 import HomePage from "./HomePage";
 import CareerPage from "./CareerPage";
 import MyForm from "./myform";
+import FormSubmit from "./FormSubmit";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="*" element={<HomePage />} />
         <Route path="/form" element={<MyForm />} />
         <Route path="/career" element={<CareerPage />} />
+        <Route path="/formsubmitted" element={<FormSubmit />} />
       </Routes>
       {/* <MyForm /> */}
     </Router>

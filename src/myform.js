@@ -44,7 +44,7 @@ const MyForm = () => {
       .catch(function (error) {
         console.error(error);
       });
-    navigate("/");
+    navigate("/formsubmitted");
   };
   // ! Axios method
 
