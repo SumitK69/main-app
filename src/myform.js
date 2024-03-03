@@ -77,7 +77,7 @@ const MyForm = () => {
       <div className="contact-form-details">
         <div className="contact-details">
           <Card style={{ borderRadius: "15px", height: "100%" }} bg="warning">
-            <Card.Body>
+            <Card.Body className="contact-details-items">
               <Card.Title>Contact Information</Card.Title>
               <Card.Subtitle className="mb-3 text-muted">
                 Lorem ipsum dolor sit amet. Ut tempore nesciunt ut voluptatem
@@ -167,7 +167,7 @@ const MyForm = () => {
             {/* <Button className="button" variant="warning" onClick={handleReset}>
               Reset
             </Button> */}
-            <Button className="button" variant="warning" type="submit">
+            <Button className="form-button" variant="warning" type="submit">
               <b>Submit</b>
             </Button>
           </div>

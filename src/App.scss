@@ -3,6 +3,7 @@
 
 
 *{
+  margin: 5px;
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
 }
 
@@ -56,6 +57,41 @@
   }
 }
 
+@media only screen and (max-width: 800px) {
+.contact-form-container{
+
+  .contact-form-details {
+    margin: 0;
+    max-width: 90%;
+    max-height: fit-content;
+      flex-direction: column-reverse;
+      .contact-details{
+        width: 100%;
+        margin: 0;
+        padding: 5px;
+        *{
+          margin: 0;
+          padding: 5px 5px;
+        }
+      }
+      .form-container{
+        width: 100%;
+        padding: 20px 10px;
+        .mb-3{
+          display: flex;
+          .form-label{
+            font-weight: bold;
+            width: 35%;
+          }
+          .form-button{
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+  }
+}
+}
 // form{
     
 //     // background-color: #f2f2f2;
