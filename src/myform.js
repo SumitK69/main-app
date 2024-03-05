@@ -32,17 +32,41 @@ const MyForm = () => {
     params: formData,
   };
   // ! Axios method
+  // const handleReset = () => {
+  //   setFormData({
+  //     "First Name": "",
+  //     "Contact Name": "",
+  //     Email: "",
+  //     Subject: "",
+  //     Description: "",
+  //   });
+  // };
+  const ValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!ValidEmail(formData.Email)) {
+      alert("enter a valid email");
+      return;
+    }
     // ! Axios method
     axios
       .request(options)
       .then(function (response) {
         console.log("response", response.data);
+        // if (response.status === 400) {
+        //   alert("enter valid email");
+        //   // handleReset();
+        //   console.error("Bad Request: ", response.data);
+        // } else {
+        //   navigate("/formsubmitted");
+        // }
       })
       .catch(function (error) {
-        console.error(error);
+        console.error("response error:", error);
       });
     navigate("/formsubmitted");
   };
@@ -55,15 +79,6 @@ const MyForm = () => {
       [name]: value,
     });
   };
-  // const handleReset = () => {
-  //   setFormData({
-  //     "First Name": "",
-  //     "Contact Name": "",
-  //     Email: "",
-  //     Subject: "",
-  //     Description: "",
-  //   });
-  // };
 
   return (
     <div className="contact-form-container">
