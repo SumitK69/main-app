@@ -70,7 +70,7 @@ const MyForm = () => {
       });
     navigate("/formsubmitted");
   };
-  // ! Axios method
+  // ! Axios method q
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -83,12 +83,7 @@ const MyForm = () => {
   return (
     <div className="contact-form-container">
       <h1>Get in Touch</h1>
-      <p className="sometext">
-        Lorem ipsum dolor sit amet. Ut tempore nesciunt ut voluptatem cumque in
-        soluta nisi sed eaque expedita At facilis alias sed numquam itaque. Ad
-        tenetur nihil sed quas omnis et ipsa temporibus qui nemo obcaecati aut
-        itaque iure et quam magnam.
-      </p>
+
       <div className="contact-form-details">
         <div className="contact-details">
           <Card style={{ borderRadius: "15px", height: "100%" }} bg="warning">
